@@ -25,7 +25,7 @@ This project takes 23 raw sheets (customers, orders, products, inventory, campai
 | Layer | Raw / source state | Modelled state |
 | --- | --- | --- |
 | Customers | CUST_MASTER, Address, customer_contacts, user_details and security: 4 separate sheets | dim_customers (consolidated) plus a security table wired for RLS by region |
-| Products | products and subcategories (composite "category|subcategory" field) | dim_products with category and subcategory split into separate attributes |
+| Products | products and subcategories (composite "category / subcategory" field) | dim_products with category and subcategory split into separate attributes |
 | Orders | ORDERS_2025 and ORDERS_2026 with mismatched schemas | Reconciled into dim_orders_flag and fact_order_process |
 | Fulfilment | shipments and Sheet1: duplicate schemas for the same data | Deduplicated into a single shipment / order-process record |
 | Inventory | Wide format, one column per month (2025-01 to 2025-12) | fact_inventory, unpivoted to one row per product per month |
